@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abiyyu - Developer Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-950 text-white font-sans">
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 left-0 bg-gray-900 shadow-md z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center relative"
+      >
+        <!-- Nama -->
+        <h1 class="text-xl font-bold text-cyan-400">AfafAbiyyu</h1>
+
+        <!-- Menu Navigation -->
+        <div
+          class="hidden md:flex space-x-6 text-lg absolute left-1/2 -translate-x-1/2 font-[Poppins]"
+          id="menu"
+        >
+          <a href="#home" id="nav-home" class="hover:text-cyan-400">Home</a>
+          <a href="#projects" id="nav-projects" class="hover:text-cyan-400"
+            >Projects</a
+          >
+          <a href="#about" id="nav-about" class="hover:text-cyan-400">About</a>
+          <a href="#skills" id="nav-skills" class="hover:text-cyan-400"
+            >Skills</a
+          >
+          <a href="#contact" id="nav-contact" class="hover:text-cyan-400"
+            >Contact</a
+          >
+        </div>
+
+        <!-- button language -->
+        <button
+          onclick="toggleLanguage()"
+          class="bg-cyan-400 text-white px-3 py-1 rounded text-sm hover:bg-cyan-500 ml-auto"
+          id="lang-button"
+        >
+          Ubah Bahasa
+        </button>
+        <button class="md:hidden text-cyan-400" onclick="toggleMenu()">
+          <i data-feather="menu"></i>
+        </button>
+      </div>
+      <div
+        class="md:hidden justify-between items-center px-4 pb-4 hidden flex-col space-y-6 text-sm"
+        id="mobile-menu"
+      >
+        <a href="#home" id="nav-home" class="hover:text-cyan-400">Home</a>
+        <a href="#projects" id="nav-projects" class="hover:text-cyan-400"
+          >Projects</a
+        >
+        <a href="#about" id="nav-about" class="hover:text-cyan-400">About</a>
+        <a href="#skills" id="nav-skills" class="hover:text-cyan-400">Skills</a>
+        <a href="#contact" id="nav-contact" class="hover:text-cyan-400"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section
+      id="home"
+      class="h-screen flex flex-col items-center justify-center text-center px-4 pt-24"
+    >
+      <img
+        src="boy.JPG"
+        alt="Profile"
+        class="w-60 h-60 rounded-full border-4 border-cyan-400 mb-4"
+      />
+      <h2 class="text-4xl md:text-6xl font-bold mb-4" id="hero-title">
+        Hi, I'm <span class="text-cyan-400">AbY</span>
+      </h2>
+      <p class="text-lg md:text-2xl text-gray-400" id="hero-subtitle">
+        Full Stack Developer | Building clean & modern apps
+      </p>
+      <a
+        href="#contact"
+        class="inline-block mt-6 bg-cyan-500 text-white px-4 py-2 rounded hover:bg-cyan-600"
+        id="hero-button"
+        >Hire Me</a
+      >
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-20 bg-gray-900 px-4">
+      <div class="max-w-5xl mx-auto text-center">
+        <h3 class="text-3xl font-bold mb-12" id="projects-title">Projects</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div
+            class="bg-gray-800 rounded-xl p-6 shadow hover:shadow-cyan-500/20 transition"
+          >
+            <h4 class="text-xl font-semibold text-cyan-300 mb-2">
+              MyPortfolio
+            </h4>
+            <p class="text-gray-400 text-sm mb-2" id="project-1-desc">
+              Personal site with HTML, JS, and Tailwind CSS.
+            </p>
+            <button
+              onclick="toggleDetail(this)"
+              class="text-sm text-cyan-400 hover:underline"
+              id="project-1-btn"
+            >
+              Lihat Selengkapnya
+            </button>
+            <div
+              class="mt-2 text-gray-300 text-sm hidden"
+              id="project-1-detail"
+            >
+              Dibuat responsif, dengan smooth scroll dan animasi hover.
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 rounded-xl p-6 shadow hover:shadow-cyan-500/20 transition"
+          >
+            <h4 class="text-xl font-semibold text-cyan-300 mb-2">
+              Weather App
+            </h4>
+            <p class="text-gray-400 text-sm mb-2">
+              App cuaca pakai OpenWeather API dan fetch JS.
+            </p>
+            <button
+              onclick="toggleDetail(this)"
+              class="text-sm text-cyan-400 hover:underline"
+            >
+              Lihat Selengkapnya
+            </button>
+            <div class="mt-2 text-gray-300 text-sm hidden">
+              Menampilkan data cuaca real-time, menggunakan JS fetch dan
+              async/await.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h3 class="text-3xl font-bold mb-6" id="about-title">About Me</h3>
+        <p class="text-gray-400 text-sm md:text-base" id="about-text">
+          Saya developer yang fokus pada web & mobile development. Berpengalaman
+          dengan Html, CSS, JavaScript, React, Tailwind, dan selalu belajar
+          teknologi baru.
+        </p>
+        <a
+          href="cv.html"
+          class="inline-block mt-6 bg-gray-700 px-4 py-2 rounded hover:bg-gray-600 text-sm"
+          id="cv-link"
+          >Lihat CV</a
+        >
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-20 bg-gray-900 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-3xl font-bold text-center mb-12" id="skills-title">
+          Skills
+        </h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h4 class="font-semibold mb-2">HTML</h4>
+            <div class="w-full bg-gray-700 rounded h-3">
+              <div class="bg-cyan-400 h-3 rounded" style="width: 90%"></div>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">JavaScript</h4>
+            <div class="w-full bg-gray-700 rounded h-3">
+              <div class="bg-cyan-400 h-3 rounded" style="width: 85%"></div>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">Tailwind CSS</h4>
+            <div class="w-full bg-gray-700 rounded h-3">
+              <div class="bg-cyan-400 h-3 rounded" style="width: 80%"></div>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-2">React</h4>
+            <div class="w-full bg-gray-700 rounded h-3">
+              <div class="bg-cyan-400 h-3 rounded" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-4">
+      <div class="max-w-xl mx-auto">
+        <h3 class="text-3xl font-bold text-center mb-6" id="contact-title">
+          Contact Me
+        </h3>
+        <form class="space-y-4">
+          <input
+            type="text"
+            placeholder="Name"
+            class="w-full p-2 bg-gray-800 rounded text-white"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            class="w-full p-2 bg-gray-800 rounded text-white"
+            required
+          />
+          <textarea
+            placeholder="Message"
+            rows="4"
+            class="w-full p-2 bg-gray-800 rounded text-white"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-cyan-500 px-4 py-2 rounded hover:bg-cyan-600"
+            id="contact-btn"
+          >
+            Send Message
+          </button>
+        </form>
+        <div class="justify-center mt-8 flex space-x-8">
+          <a
+            href="http://instagram.com/biiy.yu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i data-feather="instagram" class="hover:text-cyan-400 w-8 h-8"></i>
+          </a>
+          <a
+            href="http://facebook.com/afafabiyyu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i data-feather="facebook" class="hover:text-cyan-400 w-8 h-8"></i>
+          </a>
+          <i data-feather="youtube" class="hover:text-cyan-400 w-8 h-8"></i>
+        </div>
+        <div class="mt-8 text-center">
+          <p>
+            Email:
+            <a
+              href="mailto:afafabiyyu@example.com"
+              class="text-cyan-400 hover:underline"
+              >afafabiyyu@example.com</a
+            >
+          </p>
+          <p>Phone: +62 812-3456-7890</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+      class="fixed bottom-6 right-6 bg-cyan-500 text-white p-2 rounded-full shadow-lg hidden"
+    >
+      ↑
+    </button>
+
+    <!-- Footer -->
+    <footer
+      class="py-6 text-center text-gray-500 text-sm border-t border-gray-800"
+      id="footer-text"
+    >
+      © 2025 AfafAbiyyu. All rights reserved.
+    </footer>
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- Script.Js -->
+    <script src="script.js"></script>
+  </body>
+</html>
